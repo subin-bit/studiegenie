@@ -1,79 +1,82 @@
 # StudyGenie AI
 
-StudyGenie AI is a deployable Next.js app for a Google/Gemini hackathon. Users can sign in, upload PDFs, get an automatic study pack, and continue chatting with their notes through saved recent chat threads.
+## Problem Statement
+Students often struggle with understanding large volumes of study material such as PDFs, notes, and research articles. Traditional learning methods are time-consuming, lack personalization, and make it difficult to quickly extract key insights or clarify doubts.
 
-## Stack
+There is a need for an intelligent system that can:
 
-- Next.js 16 App Router
-- Supabase Auth + Postgres + Storage + pgvector
-- Google Gemini API via `@google/genai`
-- Tailwind CSS 4
+ - Simplify complex content
+ - Provide instant explanations
+ - Enable interactive learning
 
-## Features
+## Project Description
+StudyGenie AI is an AI-powered research assistant that transforms static study materials into an interactive learning experience.
 
-- Email/password login with Supabase
-- PDF upload to Supabase Storage
-- Text extraction and chunking
-- Gemini embeddings + pgvector retrieval
-- Chat with document using RAG
-- Auto summary, key points, and quiz generation
-- ELI5 mode
-- Saved recent chats
-- Malayalam response option in chat and ELI5 mode
+Users can upload documents and:
 
-## Local setup
+Instantly generate summaries
+Ask questions and get contextual answers
+Receive simplified explanations (ELI5 mode)
+Generate quizzes for self-assessment
 
-1. Install dependencies:
+The system uses advanced AI models combined with document retrieval techniques to understand and respond accurately based on uploaded content.
 
-   ```bash
-   npm install
-   ```
+⚙️ How It Works
+User uploads a PDF or document
+Text is extracted and processed
+AI creates embeddings for semantic understanding
+Relevant content is retrieved using vector search
+AI generates accurate, context-aware responses
 
-2. Copy `.env.example` to `.env.local` and fill in:
+---
 
-   ```bash
-   NEXT_PUBLIC_SUPABASE_URL=
-   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
-   GEMINI_API_KEY=
-   ```
+## Google AI Usage
+### Tools / Models Used
+- Google Gemini API
+- Google AI Studio
 
-3. Create a Supabase project, then run [`supabase/schema.sql`](./supabase/schema.sql) in the Supabase SQL Editor.
+### How Google AI Was Used
+Google Gemini is used as the core intelligence of the system:
 
-4. In Supabase Auth settings, either:
-   - disable email confirmation for the fastest demo flow, or
-   - keep it enabled and confirm signup emails through `/auth/callback`
+📄 Document Understanding: Gemini processes extracted text and understands context
+💬 Conversational AI: Handles user queries and generates accurate answers
+🧠 Summarization: Converts long content into concise summaries
+🧒 Simplification (ELI5): Explains complex topics in simple language
+❓ Quiz Generation: Creates questions based on document content
 
-5. Start the app:
+The system integrates Gemini with a retrieval-based approach (RAG) to ensure responses are grounded in the uploaded documents.
 
-   ```bash
-   npm run dev
-   ```
+---
 
-## Deployment
+## Proof of Google AI Usage
 
-### Vercel
+![AI Proof](./proof/screenshot1.png)
 
-1. Import this project into Vercel.
-2. Add the same environment variables from `.env.local`.
-3. Deploy.
+---
 
-### Supabase checklist
+## Screenshots
 
-- Run the SQL schema once.
-- Confirm the `documents` storage bucket exists.
-- Use the project URL and publishable key in Vercel.
+![Screenshot1](./assets/screenshot1.png)  
+![Screenshot2](./assets/screenshot2.png)
 
-## App flow
+---
 
-1. User signs in.
-2. User uploads a PDF.
-3. The app extracts text, chunks it, embeds it with Gemini, and stores vectors in Supabase.
-4. StudyGenie generates a summary, key points, and quiz.
-5. The first assistant recap is saved to chat history.
-6. Later questions use vector retrieval from the same document.
+## Demo Video
+[Watch Demo](#)
 
-## Notes
+---
 
-- This build is optimized for hackathon MVP speed, not giant textbook uploads.
-- For very large PDFs, consider background jobs and resumable pipelines.
-- Voice mode and mind maps are not implemented in this version.
+## Installation Steps
+
+```bash
+# Clone the repository
+git clone https://github.com/subin-bit/studiegenie.git
+
+# Go to project folder
+cd studiegenie
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
