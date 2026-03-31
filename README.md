@@ -50,19 +50,19 @@ The system integrates Gemini with a retrieval-based approach (RAG) to ensure res
 
 ## Proof of Google AI Usage
 
-![AI Proof](./proof/screenshot1.png)
+![AI Proof](./assets/AI_Proof.png)
 
 ---
 
 ## Screenshots
 
-![Screenshot1](./assets/screenshot1.png)  
-![Screenshot2](./assets/screenshot2.png)
+![Screenshot1](./assets/Screenshot_1.png)  
+![Screenshot2](./assets/Screenshot_2.png)
 
 ---
 
 ## Demo Video
-[Watch Demo](#)
+[Watch Demo](./assets/Demo.mp4)
 
 ---
 
