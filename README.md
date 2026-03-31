@@ -62,7 +62,7 @@ The system integrates Gemini with a retrieval-based approach (RAG) to ensure res
 ---
 
 ## Demo Video
-[Watch Demo](./assets/demo(1).mp4)
+[Watch Demo](./assets/demo.mp4)
 
 ---
 
